@@ -183,7 +183,7 @@ function! s:SnipMapKeys()
   if (!hasmapto( 'i<BS>'.g:snippetsEmu_key, 's'))
     exec 'smap <unique> '.g:snippetsEmu_key.' i<BS>'.g:snippetsEmu_key
   endif
-  imap <silent> <script> <Plug>Jumper <C-R>=<SID>Jumper()<CR>
+  imap <silent> <script> <Plug>Jumper <C-\><C-O>:call feedkeys(<SID>Jumper(), 'n')<CR>
 endfunction
 
 call s:SnipMapKeys()
